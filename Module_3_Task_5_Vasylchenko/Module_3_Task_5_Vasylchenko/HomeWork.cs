@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Module_3_Task_5_Vasylchenko
@@ -16,23 +13,13 @@ namespace Module_3_Task_5_Vasylchenko
 
         public async Task<string> HelloAsync()
         {
-            return await Task.Run(() => File.ReadAllTextAsync("TextFile1.txt"));
+            return await File.ReadAllTextAsync("TextFile1.txt");
         }
 
-        public async Task<string> ConcontenAsync()
+        public async Task<string> ConcatenationAsync()
         {
             var k = await Task.WhenAll(HelloAsync(), WorldAsync());
-            foreach (var y in k)
-            {
-                Console.WriteLine(y);
-            }
-
-            return await Task.Run(() => " ");
-        }
-
-        public void RR()
-        {
-            Console.WriteLine(ConcontenAsync().GetAwaiter().GetResult());
+            return await Task.Run(() => $"{k[0]} {k[1]}");
         }
     }
 }

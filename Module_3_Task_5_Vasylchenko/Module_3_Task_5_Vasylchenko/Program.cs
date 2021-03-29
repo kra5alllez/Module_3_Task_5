@@ -6,8 +6,8 @@ namespace Module_3_Task_5_Vasylchenko
     {
         public static void Main(string[] args)
         {
-            HomeWork w = new HomeWork();
-            w.RR();
+            HomeWork homeWork = new HomeWork();
+            Console.WriteLine(homeWork.ConcatenationAsync().GetAwaiter().GetResult());
         }
     }
 }
