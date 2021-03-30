@@ -7,7 +7,7 @@ namespace Module_3_Task_5_Vasylchenko
         public static void Main(string[] args)
         {
             HomeWork homeWork = new HomeWork();
-            Console.WriteLine(homeWork.ConcatenationAsync().GetAwaiter().GetResult());
+            Console.WriteLine(homeWork.HomeWorkAsync().GetAwaiter().GetResult());
         }
     }
 }
